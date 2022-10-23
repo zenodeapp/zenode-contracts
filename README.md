@@ -37,7 +37,7 @@ This is the approach I personally recommend for it clearly shows that this repos
 1. **Clone and stage the submodule**
 
    ```
-   git submodule add https://github.com/zenodeapp/zenode-contracts.git <destination_folder>
+   git submodule add -b main https://github.com/zenodeapp/zenode-contracts.git <destination_folder>
    ```
 
    > <i>\<destination_folder\></i> can be omitted, this will clone the repo in the current directory inside a folder named `zenode-contracts`.
@@ -49,25 +49,15 @@ This is the approach I personally recommend for it clearly shows that this repos
    git push
    ```
 
-3. **Add submodule summaries to `git status` (Optional)**
+3. **Updating submodules (for in the future)**
 
-   To show the current state of your submodule using `git status`, enable `status.submoduleSummary` in your global git configurations.
-
-   ```
-   git config --global status.submoduleSummary true
-   ```
-
-   > This allows you to inspect both your repository and submodules at once using the `git status`-command.
-
-4. **Updating submodules (Optional)**
-
-   To pull and incorporate the most recent changes, use:
+   To pull and incorporate the most recent changes, run this command inside the root of your main repository:
 
    ```
-   git submodule update --init --recursive
+   git submodule update --remote --recursive <path_to_submodule>
    ```
 
-   > Run this command inside the root of your main repository.
+   > Omit  <i>\<path_to_submodule\></i> to update every submodule.
 
 ### Add as an npm module
 
