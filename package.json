@@ -1,8 +1,8 @@
 {
-  "name": "zenode-helpers",
+  "name": "zenode-contracts",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/zenodeapp/zenode-helpers.git",
+  "repository": "https://github.com/zenodeapp/zenode-contracts.git",
   "author": "zenodeapp",
   "license": "MIT"
 }
