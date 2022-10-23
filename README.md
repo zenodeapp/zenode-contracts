@@ -49,7 +49,7 @@ This is the approach I personally recommend for it clearly shows that this repos
    git push
    ```
 
-3. **Updating submodules (for in the future)**
+**Update submodule (for in the future)**
 
    To pull and incorporate the most recent changes, run this command inside the root of your main repository:
 
@@ -58,6 +58,21 @@ This is the approach I personally recommend for it clearly shows that this repos
    ```
 
    > Omit  <i>\<path_to_submodule\></i> to update every submodule.
+
+<br>
+
+**Useful tip**
+
+   The `git submodule foreach '[git action]'`-command is very useful when it comes to performing git actions on multiple submodules at once.
+    
+   ```
+   git submodule foreach 'git fetch'
+   git submodule foreach 'git diff ...origin'
+   ```
+   
+   > This example fetches all changes for every submodule and displays them in your terminal.
+   
+You can read more about Submodules in the [Git Documentation](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 ### Add as an npm module
 
