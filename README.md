@@ -85,11 +85,11 @@ yarn add zenodeapp/zenode-contracts
 
 If you're interested in a specific branch, commit or tag, run the following command instead:
 
-```python
+```
 npm install zenodeapp/zenode-contracts#<branch/commit/tag>
 ```
 
-```python
+```
 yarn add zenodeapp/zenode-contracts#<branch/commit/tag>
 ```
 
@@ -99,11 +99,11 @@ Do have in mind that updating modules the way you're used to with your package m
 
 - Download .zip file on Github (top-right):
   
-  ![download-zip](https://user-images.githubusercontent.com/108588903/197371668-3c1f3d54-5a6b-4566-a591-760a04dfdf8c.png)
+  ![download-zip](https://user-images.githubusercontent.com/108588903/197372280-df92e403-0805-4095-86b5-433f88773b52.png)
 
 - Or, clone the repository using the command line:
 
-  ```python
+  ```
   git clone https://github.com/zenodeapp/zenode-contracts.git <destination_folder>
   ```
 
