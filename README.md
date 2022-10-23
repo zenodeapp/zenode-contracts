@@ -98,8 +98,8 @@ Do have in mind that updating modules the way you're used to with your package m
 ### Add by downloading or cloning
 
 - Download .zip file on Github (top-right):
-
-  ![download-zip](https://user-images.githubusercontent.com/108588903/197370992-61d208c4-bd61-47c2-a5d3-00b00300efcd.png)
+  
+  ![download-zip](https://user-images.githubusercontent.com/108588903/197371668-3c1f3d54-5a6b-4566-a591-760a04dfdf8c.png)
 
 - Or, clone the repository using the command line:
 
