@@ -1,6 +1,6 @@
 # ZENODE Contracts
 
-A light-sized repository aiming to bundle commonly used Solidity contracts, libraries and helper functions together.
+A lightweight repository that aims to bundle commonly used Solidity contracts, libraries and helper functions together.
 
 This has been built by ZENODE and is licensed under the MIT-license (see [LICENSE.md](./LICENSE.md)).
 
