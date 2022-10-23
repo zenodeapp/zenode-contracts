@@ -45,7 +45,7 @@ This is the approach I personally recommend for it clearly shows that this repos
 2. **Commit and push**
 
    ```
-   git commit -m "Added submodule zenode-contracts.git"
+   git commit -a -m "Added submodule zenode-contracts.git"
    git push
    ```
 
