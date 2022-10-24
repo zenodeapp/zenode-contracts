@@ -49,7 +49,7 @@ This is the approach I personally recommend for it clearly shows that this repos
    git push
    ```
 
-**Update submodule (for in the future)**
+**Updating submodules (for in the future)**
 
    To pull and incorporate the most recent changes, run this command inside the root of your main repository:
 
@@ -59,6 +59,26 @@ This is the approach I personally recommend for it clearly shows that this repos
 
    > Omit  <i>\<path_to_submodule\></i> to update every submodule.
 
+<br>
+  
+**Cloning repositories with submodules (for in the future)**
+
+  By default, cloning a repository with submodules won't include the files for every submodule.  This may be considered a drawback as it requires extra knowledge and experience from your targeted audience.
+  
+  Cloning the repo now requires an extra flag: `--recursive`.
+  
+  ```
+  git clone --recursive <url_to_repo_with_submodules> <destination_folder>
+  ```
+  
+  If you forgot to include the `--recursive` flag, you could always run the following git command to fetch all submodules:
+  
+  ```
+  git submodule update --init --recursive
+  ```
+  
+  > Here the `--recursive` flag is optional and only necessary if you have nested submodules (submodules containing submodules).
+  
 <br>
 
 **Useful tip**
@@ -98,7 +118,7 @@ npm install zenodeapp/zenode-contracts#<branch/commit/tag>
 yarn add zenodeapp/zenode-contracts#<branch/commit/tag>
 ```
 
-Do have in mind that updating modules the way you're used to with your package manager will probably not work with git packages. Re-install the package instead if you wish to pull the most recent changes to your project.
+Do have in mind that the usual approach to updating modules with your package manager will probably not work with git packages; re-install the package instead if you wish to pull the most recent changes to your project.
 
 ### Add by downloading or cloning
 
