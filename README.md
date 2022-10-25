@@ -51,47 +51,47 @@ This is the approach I personally recommend for it clearly shows that this repos
 
 **Updating submodules (for in the future)**
 
-   To pull and incorporate the most recent changes, run this command inside the root of your main repository:
+To pull and incorporate the most recent changes, run this command inside the root of your main repository:
 
-   ```
-   git submodule update --remote --recursive <path_to_submodule>
-   ```
+```
+git submodule update --remote --recursive <path_to_submodule>
+```
 
-   > Omit  <i>\<path_to_submodule\></i> to update every submodule.
+> Omit <i>\<path_to_submodule\></i> to update every submodule.
 
 <br>
   
 **Cloning repositories with submodules (for in the future)**
 
-  By default, cloning a repository with submodules won't include the files for every submodule.  This may be considered a drawback as it requires extra knowledge and experience from your targeted audience.
-  
-  Cloning the repo now requires an extra flag: `--recursive`.
-  
-  ```
-  git clone --recursive <url_to_repo_with_submodules> <destination_folder>
-  ```
-  
-  If you forgot to include the `--recursive` flag, you could always run the following git command to fetch all submodules:
-  
-  ```
-  git submodule update --init --recursive
-  ```
-  
-  > Here the `--recursive` flag is optional and only necessary if you have nested submodules (submodules containing submodules).
-  
+By default, cloning a repository with submodules won't include the files for every submodule. This may be considered a drawback as it requires extra knowledge and experience from your targeted audience.
+
+Cloning the repo now requires an extra flag: `--recursive`.
+
+```
+git clone --recursive <url_to_repo_with_submodules> <destination_folder>
+```
+
+If you forgot to include the `--recursive` flag, you could always run the following git command to fetch all submodules:
+
+```
+git submodule update --init --recursive
+```
+
+> Here the `--recursive` flag is optional and only necessary if you have nested submodules (submodules containing submodules).
+
 <br>
 
 **Useful tip!**
 
-   The `git submodule foreach '[git action]'`-command is very useful when it comes to performing git actions on multiple submodules at once.
-    
-   ```
-   git submodule foreach 'git fetch'
-   git submodule foreach 'git diff ...origin'
-   ```
-   
-   > This example fetches all changes for every submodule and displays them in your terminal.
-   
+The `git submodule foreach '[git action]'`-command is very useful when it comes to performing git actions on multiple submodules at once.
+
+```
+git submodule foreach 'git fetch'
+git submodule foreach 'git diff ...origin'
+```
+
+> This example fetches all changes for every submodule and displays them in your terminal.
+
 You can read more about Submodules in the [Git Documentation](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
 ### Add as an npm module
@@ -123,7 +123,7 @@ Do have in mind that the usual approach to updating modules with your package ma
 ### Add by downloading or cloning
 
 - Download .zip file on Github (top-right):
-  
+
   ![download-zip](https://user-images.githubusercontent.com/108588903/197372280-df92e403-0805-4095-86b5-433f88773b52.png)
 
 - Or, clone the repository using the command line:
