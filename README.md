@@ -81,7 +81,7 @@ This is the approach I personally recommend for it clearly shows that this repos
   
 <br>
 
-**Useful tip**
+**Useful tip!**
 
    The `git submodule foreach '[git action]'`-command is very useful when it comes to performing git actions on multiple submodules at once.
     
