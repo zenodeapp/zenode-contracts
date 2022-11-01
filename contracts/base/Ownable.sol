@@ -26,12 +26,19 @@
 
 pragma solidity ^0.8.17;
 
-contract Owner {
-  address owner;
-  mapping(address => bool) admins;
+contract Ownable {
+  address private _owner;
+  address[] private _admins;
+
+  struct Admin {
+    bool isAdmin;
+    uint index;
+  }
+
+  mapping(address => Admin) private __admins;
 
   constructor() {
-    owner = msg.sender;
+    _owner = msg.sender;
   }
 
   modifier onlyOwner {
@@ -51,22 +58,49 @@ contract Owner {
   }
 
   function _isOwner(address _address) public view returns(bool) {
-    return _address == owner;
+    return _address == _owner;
   }
 
   function _isAdmin(address _address) public view returns(bool) {
-    return admins[_address];
+    return __admins[_address].isAdmin;
   }
 
   function _changeOwner(address _newOwner) public onlyOwner {
-    owner = _newOwner;
+    _owner = _newOwner;
   }
 
   function _addAdmin(address _address) public onlyOwner {
-    admins[_address] = true;
+    require(!_isOwner(_address), "The owner can't be added as an admin.");
+    require(!_isAdmin(_address), "The address you specified is already registered as an admin.");
+
+    _admins.push(_address);
+    __admins[_address].isAdmin = true;
+    __admins[_address].index = _admins.length - 1;
   }
 
   function _removeAdmin(address _address) public onlyOwner {
-    admins[_address] = false;
+    require(_isAdmin(_address), "The address you specified is not registered as an admin.");
+
+    uint index = __admins[_address].index;
+    address last = _admins[_admins.length - 1];
+
+    // In the _admins-array we replace the address we're removing as an admin with the last address
+    _admins[index] = last;
+    __admins[last].index = index;
+
+    // Shorten the _admins-array
+    _admins.pop();
+
+    // Remove the admin in the __admins-mapping.
+    __admins[_address].isAdmin = false;
+    __admins[_address].index = 0;
+  }
+
+  function _getOwner() public view returns(address) {
+    return _owner;
+  }
+
+  function _getAdmins() public view returns(address[] memory) {
+    return _admins;
   }
 } 

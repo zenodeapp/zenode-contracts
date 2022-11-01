@@ -8,7 +8,7 @@ This has been built by ZENODE and is licensed under the MIT-license (see [LICENS
 
 ### Contracts
 
-- [Owner.sol](contracts/base/Owner.sol)
+- [Ownable.sol](contracts/base/Ownable.sol)
   - Create ownable contracts
   - Adding and removing of administrators
   - Limiting read/write access
